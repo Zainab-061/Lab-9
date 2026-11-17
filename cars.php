@@ -13,6 +13,7 @@
   require_once "settings.php";
 
   // Step 1: Connect to the database
+  mysqli_report(MYSQLI_REPORT_OFF);
   $dbconn = @mysqli_connect($host, $user, $pwd, $sql_db);
 
   if ($dbconn) {

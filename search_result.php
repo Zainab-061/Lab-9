@@ -14,7 +14,9 @@
   <h1>Search Results</h1>
 <?php
 require_once "settings.php";
+mysqli_report(MYSQLI_REPORT_OFF);
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+
 
 if (!$conn) {
     echo "<p>Unable to connect to the database.</p>";
@@ -40,7 +42,7 @@ if (!$conn) {
             }
             echo "</table>";
         } else {
-            echo "<p>🚫 No matching cars found.</p>";
+            echo "<p>No matching cars found.</p>";
         }
     } else {
         echo "<p>Please enter a model to search.</p>";
